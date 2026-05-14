@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none">
+  <!-- Icon circle -->
+  <circle cx="100" cy="80" r="52" stroke="#0B1F3A" stroke-width="5" stroke-dasharray="270 60" stroke-linecap="round" transform="rotate(-20 100 80)"/>
+
+  <!-- Circuit traces left -->
+  <line x1="55" y1="78" x2="72" y2="78" stroke="#0B1F3A" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="72" cy="78" r="3.5" stroke="#0B1F3A" stroke-width="2.5" fill="white"/>
+  <line x1="72" y1="78" x2="72" y2="60" stroke="#0B1F3A" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="72" cy="60" r="3.5" stroke="#0B1F3A" stroke-width="2.5" fill="white"/>
+  <line x1="72" y1="60" x2="85" y2="60" stroke="#0B1F3A" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="55" y1="88" x2="80" y2="88" stroke="#0B1F3A" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="80" cy="88" r="3.5" stroke="#0B1F3A" stroke-width="2.5" fill="white"/>
+  <line x1="55" y1="98" x2="68" y2="98" stroke="#0B1F3A" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="68" cy="98" r="3.5" stroke="#0B1F3A" stroke-width="2.5" fill="white"/>
+
+  <!-- Lightning bolt yellow -->
+  <polygon points="105,32 88,78 99,78 95,128 118,78 107,78" fill="#FACC15"/>
+
+  <!-- WiFi icon teal (top-right of circle) -->
+  <path d="M128 55 Q136 47 144 55" stroke="#0F766E" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  <path d="M124 60 Q136 48 148 60" stroke="#0F766E" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  <circle cx="136" cy="64" r="3" fill="#0F766E"/>
+
+  <!-- Network nodes (bottom-right of circle) -->
+  <circle cx="138" cy="90" r="4" stroke="#0B1F3A" stroke-width="2.5" fill="white"/>
+  <circle cx="152" cy="102" r="4" stroke="#0B1F3A" stroke-width="2.5" fill="white"/>
+  <circle cx="130" cy="108" r="4" stroke="#0B1F3A" stroke-width="2.5" fill="white"/>
+  <line x1="138" y1="90" x2="152" y2="102" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="152" y1="102" x2="130" y2="108" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="130" y1="108" x2="138" y2="90" stroke="#0B1F3A" stroke-width="2.5"/>
+
+  <!-- Brand name -->
+  <text x="185" y="90" font-family="Arial, sans-serif" font-weight="800" font-size="28" fill="#0B1F3A" letter-spacing="-0.5">
+    <tspan fill="#0B1F3A">Elektro</tspan><tspan fill="#0B1F3A">Net</tspan><tspan> </tspan><tspan fill="#0B1F3A">Tiran</tspan><tspan fill="#0B1F3A">ë</tspan>
+  </text>
+
+  <!-- Tagline with dashes -->
+  <line x1="175" y1="115" x2="190" y2="115" stroke="#0F766E" stroke-width="2" stroke-linecap="round"/>
+  <text x="196" y="120" font-family="Arial, sans-serif" font-size="11" fill="#0F766E" letter-spacing="0.3">Elektrike • IT • Kamera Sigurie • Networking</text>
+  <line x1="375" y1="115" x2="390" y2="115" stroke="#0F766E" stroke-width="2" stroke-linecap="round"/>
+</svg>
