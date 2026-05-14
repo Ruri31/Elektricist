@@ -16,23 +16,22 @@ export default function ProblemCategorySection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {problemCategories.map((item) => {
             const Icon = iconMap[item.icon] || Zap;
             return (
-              <a
+              <div
                 key={item.title}
-                href={item.href}
-                className="group flex flex-col items-start gap-3 p-5 bg-bg rounded-2xl border border-gray-100 hover:border-secondary hover:shadow-md transition-all"
+                className="flex flex-col items-center text-center gap-3 p-5 bg-bg rounded-2xl border border-gray-100"
               >
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
-                  <Icon size={22} className="text-primary group-hover:text-secondary transition-colors" />
+                <div className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Icon size={22} className="text-primary" />
                 </div>
                 <div>
                   <p className="font-semibold text-primary text-sm">{item.title}</p>
                   <p className="text-muted text-xs mt-0.5">{item.text}</p>
                 </div>
-              </a>
+              </div>
             );
           })}
         </div>

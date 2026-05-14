@@ -7,7 +7,6 @@ const navLinks = [
   { label: 'Kreu', href: '/' },
   { label: 'Shërbimet', href: '/#sherbimet' },
   { label: 'Galeria', href: '/#galeria' },
-  { label: 'FAQ', href: '/#faq' },
   { label: 'Kontakt', href: '/kontakt' },
 ];
 

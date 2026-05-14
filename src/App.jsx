@@ -7,13 +7,9 @@ import Hero from './components/Hero.jsx';
 import TrustBar from './components/TrustBar.jsx';
 import ProblemCategorySection from './components/ProblemCategorySection.jsx';
 import ServicesSection from './components/ServicesSection.jsx';
-import EmergencyBanner from './components/EmergencyBanner.jsx';
-import BusinessSolutions from './components/BusinessSolutions.jsx';
 import Gallery from './components/Gallery.jsx';
-import HowItWorks from './components/HowItWorks.jsx';
 import Packages from './components/Packages.jsx';
 import Testimonials from './components/Testimonials.jsx';
-import FAQ from './components/FAQ.jsx';
 import Contact from './components/Contact.jsx';
 import ServiceDetail from './components/ServiceDetail.jsx';
 import SEO from './components/SEO.jsx';
@@ -26,13 +22,9 @@ function HomePage() {
       <TrustBar />
       <ProblemCategorySection />
       <ServicesSection />
-      <EmergencyBanner />
-      <BusinessSolutions />
       <Gallery />
-      <HowItWorks />
       <Packages />
       <Testimonials />
-      <FAQ />
       <Contact />
     </>
   );

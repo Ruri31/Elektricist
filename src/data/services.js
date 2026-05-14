@@ -44,6 +44,17 @@ export const services = [
     keywords: ['ndricim led tirane', 'instalim led', 'ndricim dekorativ', 'elektricist led'],
   },
   {
+    slug: 'ndricim-led-gipse',
+    title: 'Ndriçim LED për Gipse',
+    category: 'Elektrike',
+    shortText: 'Instalim ndriçimi LED të integruar në tavane gipsi — strip LED, spot dhe efekte dritë moderne.',
+    fullText: 'Projektojmë dhe instalojmë ndriçim LED të integruar në konstruksione gipsi për dhoma gjumi, sallon, kuzhina dhe ambiente biznesi. Përdorim strip LED, spot LED të inkorporuar dhe profile alumini për efekte moderne. Punojmë me elektrik dhe gipsist për rezultat të përsosur estetik dhe teknik.',
+    image: '/images/electrical-switch-outlet-led.webp',
+    icon: 'Lightbulb',
+    cta: 'Kërko instalim gipsi',
+    keywords: ['ndricim led gipse tirane', 'instalim led gipse', 'tavan gipsi led', 'strip led gipse', 'ndricim modern'],
+  },
+  {
     slug: 'kamera-sigurie-tirane',
     title: 'Kamera Sigurie CCTV/IP',
     category: 'Kamera',

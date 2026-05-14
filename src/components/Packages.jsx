@@ -1,6 +1,11 @@
 import { CheckCircle, MessageCircle } from 'lucide-react';
 import { packages } from '../data/packages.js';
-import { getWhatsAppLink } from '../data/business.js';
+import { getPhoneClean } from '../data/business.js';
+
+const packageWhatsAppLink = (msg) => {
+  const clean = getPhoneClean();
+  return `https://wa.me/${clean}?text=${encodeURIComponent(msg)}`;
+};
 
 export default function Packages() {
   return (
@@ -50,7 +55,7 @@ export default function Packages() {
                 ))}
               </ul>
               <a
-                href={getWhatsAppLink()}
+                href={packageWhatsAppLink(pkg.whatsappMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-colors ${
