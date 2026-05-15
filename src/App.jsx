@@ -13,6 +13,7 @@ import Testimonials from './components/Testimonials.jsx';
 import Contact from './components/Contact.jsx';
 import ServiceDetail from './components/ServiceDetail.jsx';
 import SEO from './components/SEO.jsx';
+import LocalSEOSection from './components/LocalSEOSection.jsx';
 
 function HomePage() {
   return (
@@ -22,6 +23,7 @@ function HomePage() {
       <TrustBar />
       <ProblemCategorySection />
       <ServicesSection />
+      <LocalSEOSection />
       <Gallery />
       <Packages />
       <Testimonials />
