@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, MessageCircle } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, Phone, MessageCircle, FileText } from 'lucide-react';
 import { business, getWhatsAppLink } from '../data/business.js';
 
 const navLinks = [
@@ -14,6 +14,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -24,6 +25,20 @@ export default function Header() {
   useEffect(() => {
     setOpen(false);
   }, [location]);
+
+  const handlePreventiv = () => {
+    setOpen(false);
+    const scrollToSection = () => {
+      const el = document.getElementById('preventiv');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(scrollToSection, 80);
+    } else {
+      scrollToSection();
+    }
+  };
 
   return (
     <header
@@ -62,6 +77,13 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
+            <button
+              onClick={handlePreventiv}
+              className="flex items-center gap-1.5 text-sm font-semibold text-secondary hover:text-primary transition-colors"
+            >
+              <FileText size={14} />
+              Krijo Preventiv
+            </button>
           </nav>
 
           {/* Desktop CTAs */}
@@ -109,6 +131,13 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
+            <button
+              onClick={handlePreventiv}
+              className="flex items-center gap-2 text-base font-semibold text-secondary py-1 text-left"
+            >
+              <FileText size={16} />
+              Krijo Preventiv
+            </button>
             <div className="flex flex-col gap-2 pt-2 border-t border-gray-100">
               <a
                 href={`tel:${business.phone}`}
@@ -126,6 +155,13 @@ export default function Header() {
                 <MessageCircle size={18} />
                 Shkruaj në WhatsApp
               </a>
+              <button
+                onClick={handlePreventiv}
+                className="flex items-center justify-center gap-2 py-3 bg-accent text-primary font-semibold rounded-xl"
+              >
+                <FileText size={18} />
+                Krijo Preventiv
+              </button>
             </div>
           </nav>
         </div>

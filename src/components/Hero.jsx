@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, CheckCircle } from 'lucide-react';
+import { Phone, MessageCircle, CheckCircle, FileText } from 'lucide-react';
 import { business, getWhatsAppLink } from '../data/business.js';
 
 const badges = [
@@ -9,6 +9,10 @@ const badges = [
 ];
 
 export default function Hero() {
+  const scrollToPreventiv = () => {
+    const el = document.getElementById('preventiv');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   return (
     <section className="relative bg-primary text-white pt-28 pb-16 overflow-hidden">
       {/* Background pattern */}
@@ -40,7 +44,7 @@ export default function Hero() {
               Na kontaktoni për ndërhyrje të shpejtë dhe punë të pastër.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-8">
               <a
                 href={`tel:${business.phone}`}
                 className="flex items-center justify-center gap-2 px-6 py-4 bg-accent text-primary font-bold rounded-xl text-base hover:bg-yellow-400 transition-colors shadow-lg"
@@ -57,6 +61,13 @@ export default function Hero() {
                 <MessageCircle size={20} />
                 Shkruaj në WhatsApp
               </a>
+              <button
+                onClick={scrollToPreventiv}
+                className="flex items-center justify-center gap-2 px-6 py-4 bg-white/10 border border-white/30 text-white font-bold rounded-xl text-base hover:bg-white hover:text-primary transition-colors shadow-lg backdrop-blur-sm"
+              >
+                <FileText size={20} />
+                Krijo Preventiv
+              </button>
             </div>
 
             <div className="flex flex-wrap gap-3">

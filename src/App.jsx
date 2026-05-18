@@ -13,6 +13,7 @@ import Contact from './components/Contact.jsx';
 import ServiceDetail from './components/ServiceDetail.jsx';
 import SEO from './components/SEO.jsx';
 import LocalSEOSection from './components/LocalSEOSection.jsx';
+import { PreventivProvider } from './context/PreventivContext.jsx';
 
 function HomePage() {
   return (
@@ -48,16 +49,18 @@ export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/sherbime/:slug" element={<ServiceDetail />} />
-            <Route path="/kontakt" element={<ContactPage />} />
-          </Routes>
-        </main>
-        <Footer />
-        <FloatingActions />
+        <PreventivProvider>
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/sherbime/:slug" element={<ServiceDetail />} />
+              <Route path="/kontakt" element={<ContactPage />} />
+            </Routes>
+          </main>
+          <Footer />
+          <FloatingActions />
+        </PreventivProvider>
       </BrowserRouter>
     </HelmetProvider>
   );
