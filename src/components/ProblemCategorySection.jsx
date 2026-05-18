@@ -22,7 +22,7 @@ export default function ProblemCategorySection() {
             return (
               <div
                 key={item.title}
-                className="flex flex-col items-center text-center gap-3 p-5 bg-bg rounded-2xl border border-gray-100"
+                className="flex flex-col items-center text-center gap-3 p-5 bg-bg rounded-2xl border border-gray-100 hover:border-secondary/40 hover:shadow-sm transition-all"
               >
                 <div className="w-11 h-11 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center">
                   <Icon size={22} className="text-primary" />

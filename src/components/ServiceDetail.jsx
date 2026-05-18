@@ -63,7 +63,7 @@ export default function ServiceDetail() {
               {/* Image */}
               <div className="aspect-video img-placeholder rounded-2xl overflow-hidden mb-6 relative">
                 <img
-                  src={service.image}
+                  src={service.heroImage || service.image}
                   alt={service.title}
                   className="w-full h-full object-cover"
                   onError={(e) => { e.target.style.display = 'none'; }}

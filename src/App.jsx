@@ -9,7 +9,6 @@ import ProblemCategorySection from './components/ProblemCategorySection.jsx';
 import ServicesSection from './components/ServicesSection.jsx';
 import Gallery from './components/Gallery.jsx';
 import Packages from './components/Packages.jsx';
-import Testimonials from './components/Testimonials.jsx';
 import Contact from './components/Contact.jsx';
 import ServiceDetail from './components/ServiceDetail.jsx';
 import SEO from './components/SEO.jsx';
@@ -21,12 +20,11 @@ function HomePage() {
       <SEO includeFaq={true} />
       <Hero />
       <TrustBar />
-      <ProblemCategorySection />
       <ServicesSection />
-      <LocalSEOSection />
       <Gallery />
+      <ProblemCategorySection />
       <Packages />
-      <Testimonials />
+      <LocalSEOSection />
       <Contact />
     </>
   );
