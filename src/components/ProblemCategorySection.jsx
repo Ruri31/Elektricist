@@ -8,9 +8,6 @@ import {
   FileText,
   ArrowRight,
   Sparkles,
-  ShieldCheck,
-  Clock,
-  Receipt,
 } from 'lucide-react';
 import { problemCategories } from '../data/problemCategories.js';
 import { formatLek } from '../data/servicesPricing.js';
@@ -22,12 +19,6 @@ const steps = [
   { n: '01', title: 'Zgjidh kategorinë', text: 'Klikoni problemin që keni.' },
   { n: '02', title: 'Përcakto shërbimet', text: 'Zgjidh sasitë dhe shtoji në preventiv.' },
   { n: '03', title: 'Merr PDF + dërgo', text: 'Shkarko ofertën ose dërgoje në WhatsApp.' },
-];
-
-const trustItems = [
-  { icon: Clock, label: 'Përpilim në 1 minutë' },
-  { icon: ShieldCheck, label: 'Pa pagesë & pa angazhim' },
-  { icon: Receipt, label: 'TVSH 20% e përfshirë' },
 ];
 
 export default function ProblemCategorySection() {
@@ -55,21 +46,9 @@ export default function ProblemCategorySection() {
             <Sparkles size={14} />
             Oferta online • Falas
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-primary mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-primary leading-tight">
             Krijo preventivin tënd në <span className="text-secondary">3 hapa</span>
           </h2>
-          <p className="text-muted text-base sm:text-lg">
-            Zgjidh kategorinë e problemit, shto shërbimet që të nevojiten dhe merr menjëherë një preventiv të detajuar në PDF.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-6">
-            {trustItems.map((t) => (
-              <div key={t.label} className="flex items-center gap-1.5 text-xs sm:text-sm text-muted font-medium">
-                <t.icon size={14} className="text-secondary" />
-                {t.label}
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Steps row */}
