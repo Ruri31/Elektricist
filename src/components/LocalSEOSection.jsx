@@ -10,7 +10,7 @@ const highlights = [
 export default function LocalSEOSection() {
   return (
     <section id="elektricist-tirane" className="py-16 bg-bg">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <span className="inline-block text-secondary text-xs font-semibold uppercase tracking-wider mb-3">
           Shërbime profesionale në Tiranë
         </span>
@@ -18,7 +18,7 @@ export default function LocalSEOSection() {
           Elektricist në Tiranë — IT Support, Kamera Sigurie &amp; Rrjete
         </h2>
 
-        <div className="space-y-4 text-gray-700 leading-relaxed">
+        <div className="grid md:grid-cols-3 gap-6 text-gray-700 leading-relaxed">
           <p>
             <strong>ElektroNet Tiranë</strong> ofron shërbime profesionale për instalime
             elektrike, riparime elektrike, kamera sigurie CCTV/IP, rrjete interneti LAN/Wi-Fi dhe
@@ -39,7 +39,7 @@ export default function LocalSEOSection() {
           </p>
         </div>
 
-        <ul className="mt-8 grid sm:grid-cols-2 gap-3">
+        <ul className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {highlights.map((h) => (
             <li key={h} className="flex items-start gap-2 text-sm text-gray-700">
               <CheckCircle2 size={18} className="text-secondary shrink-0 mt-0.5" />
