@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import { servicesPricing, VAT_RATE, formatLek, getCategoryById } from '../data/servicesPricing.js';
+import { servicesPricing, formatLek, getCategoryById } from '../data/servicesPricing.js';
 import { business, getPhoneClean } from '../data/business.js';
 
 const iconMap = { Plug, Zap, Lightbulb, Camera, Wifi, MonitorCog };
@@ -124,10 +124,8 @@ export default function PreventivModal({ initialCategoryId, isOpen, onClose }) {
   };
 
   const totals = useMemo(() => {
-    const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
-    const vat = subtotal * VAT_RATE;
-    const grand = subtotal + vat;
-    return { subtotal, vat, grand };
+    const total = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+    return { total };
   }, [items]);
 
   const today = new Date().toLocaleDateString('sq-AL', {
@@ -153,9 +151,7 @@ export default function PreventivModal({ initialCategoryId, isOpen, onClose }) {
       lines.push(`• ${i.name} – ${i.quantity} ${i.unit} × ${formatLek(i.price)} = ${formatLek(i.price * i.quantity)}`);
     });
     lines.push('');
-    lines.push(`Nëntotali: ${formatLek(totals.subtotal)}`);
-    lines.push(`TVSH 20%: ${formatLek(totals.vat)}`);
-    lines.push(`*Totali: ${formatLek(totals.grand)}*`);
+    lines.push(`*Totali: ${formatLek(totals.total)}*`);
     if (client.notes) {
       lines.push('');
       lines.push(`Shënime: ${client.notes}`);
@@ -274,25 +270,16 @@ export default function PreventivModal({ initialCategoryId, isOpen, onClose }) {
     const labelX = totalsBoxX + 12;
     const valueX = pageWidth - margin - 12;
 
-    doc.setFontSize(10);
-    doc.setTextColor(...primary);
-    doc.setFont('helvetica', 'normal');
-    doc.text('Nëntotali (pa TVSH):', labelX, afterTableY);
-    doc.text(formatLek(totals.subtotal), valueX, afterTableY, { align: 'right' });
-
-    doc.text('TVSH 20%:', labelX, afterTableY + 16);
-    doc.text(formatLek(totals.vat), valueX, afterTableY + 16, { align: 'right' });
-
     doc.setFillColor(...secondary);
-    doc.rect(totalsBoxX, afterTableY + 26, totalsBoxWidth, 30, 'F');
+    doc.rect(totalsBoxX, afterTableY, totalsBoxWidth, 30, 'F');
     doc.setTextColor(255, 255, 255);
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(11);
-    doc.text('TOTALI (me TVSH):', labelX, afterTableY + 45);
+    doc.text('TOTALI:', labelX, afterTableY + 19);
     doc.setFontSize(12);
-    doc.text(formatLek(totals.grand), valueX, afterTableY + 45, { align: 'right' });
+    doc.text(formatLek(totals.total), valueX, afterTableY + 19, { align: 'right' });
 
-    let noteY = afterTableY + 80;
+    let noteY = afterTableY + 50;
     if (client.notes) {
       doc.setTextColor(...primary);
       doc.setFont('helvetica', 'bold');
@@ -580,18 +567,10 @@ export default function PreventivModal({ initialCategoryId, isOpen, onClose }) {
                     ))}
                   </div>
 
-                  <div className="rounded-xl bg-bg p-4 space-y-1.5 text-sm">
-                    <div className="flex justify-between text-muted">
-                      <span>Nëntotali (pa TVSH):</span>
-                      <span className="font-semibold text-primary">{formatLek(totals.subtotal)}</span>
-                    </div>
-                    <div className="flex justify-between text-muted">
-                      <span>TVSH 20%:</span>
-                      <span className="font-semibold text-primary">{formatLek(totals.vat)}</span>
-                    </div>
-                    <div className="flex justify-between pt-2 mt-2 border-t border-gray-200">
-                      <span className="font-bold text-primary">Totali (me TVSH):</span>
-                      <span className="font-bold text-secondary text-lg">{formatLek(totals.grand)}</span>
+                  <div className="rounded-xl bg-bg p-4 text-sm">
+                    <div className="flex justify-between">
+                      <span className="font-bold text-primary">Totali:</span>
+                      <span className="font-bold text-secondary text-lg">{formatLek(totals.total)}</span>
                     </div>
                   </div>
 
